@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="styles/whatapop.css">
     <!--Documento de configuracion del modulo-->
     <script src="scripts/app.js"></script>
+    <!--Componentes-->
+    <script src="scripts/components/products-list.js"></script>
     <!--Controllers-->
     <script src="scripts/controllers/lista-productos.js"></script>
     <!--Services-->
     <script src="scripts/services/product-service.js"></script>
     <!--Directivas-->
     <script src="scripts/directives/product-card.js"></script>
+    <script src="scripts/directives/product-form.js"></script>
 
 </head>
 <!--Hacemos el bootstraping del modulo-->
@@ -22,15 +25,15 @@
     <div id="main">
         <!--Cabecera de la aplicacion-->
         <header>
-            <h1>Whatapop</h1>
+            <h1 align="center">Whatapop</h1>
         </header>
         <section ng-controller="ListaProductos">
-            <!--Formulario de alta de productos-->
-            <div>
-                <input type="text" ng-model="nombreProducto">
-                <button ng-click="guardarProducto()">Guardar Producto</button>
-            </div>
-            <div id="items">
+            <product-form align="center" press-button="guardarProducto(texto)"></product-form>
+
+            <!--Lista de Productos-->
+            <product-list></product-list>
+
+            <!--<div id="items">
                 <div class="item" ng-repeat="i in productos">
                     <div product-card
                             item-name="{{i.name}}"
@@ -39,7 +42,8 @@
                             item-category="{{i.category.name}}"
                             item-seller="{{i.seller.nick}}"></div>
                 </div>
-            </div>
+            </div>-->
+
         </section>
     </div>
 </body>

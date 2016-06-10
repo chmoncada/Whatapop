@@ -1,3 +1,9 @@
+/*header {*/
+    /*background-color: red;*/
+    /*display: block;*/
+    /*width: 960px;*/
+    /*height: 300px;*/
+/*}*/
 body {
     background:White;
 }
@@ -14,37 +20,34 @@ body {
     font-size:24px;
     padding-left:10px;
 }
-#main .sCart {
-    float:right;
-    padding-right:25px;
-}
-.sCart .quantity {
-    font-size:32px;
-    vertical-align:8px;
-}
+
 #items {
     clear:both;
+    margin: 10px 5px 10px 5px;
 }
 #main .item {
     border:1px solid black;
+    border-radius: 15px;
     display:inline-block;
-    margin:0 8px 15px;
+    margin: 15px 8px 15px;
     width: 170px;
-    height: 400px;
+    height: 300px;
 }
 .item-int {
-    margin:0 auto;
-    padding:10px 0 30px;
+    margin:0;
+    /*padding:10px 0 30px;*/
 }
 .item-int h3 {
     margin:0;
     padding-left:10px;
 }
 .item-int img {
-    width:160px;
+    border-radius: 15px 15px 0 0;
+    margin:0;
+    width:170px;
 }
 .item-int .data {
-    margin:5px 0;
+    margin:0;
     text-align:center;
 }
 .data span {

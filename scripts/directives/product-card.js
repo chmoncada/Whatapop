@@ -12,13 +12,13 @@ angular
                 category: '@itemCategory',
                 seller: '@itemSeller'
             },
-            link: function(scope, ProductService) {
+            link: ["scope", "ProductService", function(scope, ProductService) {
                 scope.obtenerRutaImagen = function(src){
                     var ruta = ProductService.obtenerRutaImagenAbsoluta(src);
                     console.log(ruta);
                     return ruta;
                 };
-            },
+            }],
             replace: true,
             templateUrl: "views/product-card.html"
         };

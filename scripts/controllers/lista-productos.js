@@ -7,10 +7,10 @@ angular.module("whatapop").controller("ListaProductos", function ($scope, Produc
 
     //Guardamos los productos
 
-    $scope.guardarProducto = function () {
+    $scope.guardarProducto = function (texto) {
 
         var producto = {
-            name: $scope.nombreProducto
+            name: texto
         };
 
         ProductService.saveProduct(producto).then(function (respuesta) {
