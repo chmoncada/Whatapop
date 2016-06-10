@@ -5,28 +5,42 @@
     <title>Whatapop - Practica KeepCoding</title>
     <!--AngularJs-->
     <script src="node_modules/angular/angular.js"></script>
+    <!--styles-->
+    <link rel="stylesheet" href="styles/whatapop.css">
     <!--Documento de configuracion del modulo-->
     <script src="scripts/app.js"></script>
     <!--Controllers-->
     <script src="scripts/controllers/lista-productos.js"></script>
     <!--Services-->
     <script src="scripts/services/product-service.js"></script>
+    <!--Directivas-->
+    <script src="scripts/directives/product-card.js"></script>
 
 </head>
 <!--Hacemos el bootstraping del modulo-->
 <body ng-app="whatapop">
-
-    <!--Cabecera de la aplicacion-->
-    <header>
-        <h1>Whatapop</h1>
-    </header>
-    <section ng-controller="ListaProductos">
-        <!--Formulario de alta de productos-->
-        <input type="text" ng-model="nombreProducto">
-        <button ng-click="guardarProducto()">Guardar Producto</button>
-        <ul>
-            <li ng-repeat="producto in productos">{{ producto.name }}</li>
-        </ul>
-    </section>
+    <div id="main">
+        <!--Cabecera de la aplicacion-->
+        <header>
+            <h1>Whatapop</h1>
+        </header>
+        <section ng-controller="ListaProductos">
+            <!--Formulario de alta de productos-->
+            <div>
+                <input type="text" ng-model="nombreProducto">
+                <button ng-click="guardarProducto()">Guardar Producto</button>
+            </div>
+            <div id="items">
+                <div class="item" ng-repeat="i in productos">
+                    <div product-card
+                            item-name="{{i.name}}"
+                            item-price="{{i.price}}"
+                            item-src="{{i.photos[0]}}"
+                            item-category="{{i.category.name}}"
+                            item-seller="{{i.seller.nick}}"></div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

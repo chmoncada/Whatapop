@@ -13,6 +13,12 @@ angular
         this.saveProduct = function (producto) {
             return $http.post("http://localhost:8000/api/products", producto);
         };
-    
-    
+
+        this.obtenerRutaImagenAbsoluta = function(rutaRelativa) {
+
+            return rutaRelativa
+                ? ("http://localhost:8000/" + rutaRelativa)
+                : undefined;
+        };
+
     });
