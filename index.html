@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whatapop - Practica KeepCoding</title>
+    <!--AngularJs-->
+    <script src="node_modules/angular/angular.js"></script>
+    <!--Documento de configuracion del modulo-->
+    <script src="scripts/app.js"></script>
+    <!--Controllers-->
+    <script src="scripts/controllers/lista-productos.js"></script>
+    <!--Services-->
+    <script src="scripts/services/product-service.js"></script>
+
+</head>
+<!--Hacemos el bootstraping del modulo-->
+<body ng-app="whatapop">
+
+    <!--Cabecera de la aplicacion-->
+    <header>
+        <h1>Whatapop</h1>
+    </header>
+    <section ng-controller="ListaProductos">
+        <ul>
+            <li ng-repeat="producto in productos">{{ producto.name }}</li>
+        </ul>
+    </section>
+</body>
+</html>

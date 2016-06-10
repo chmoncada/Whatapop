@@ -4,7 +4,9 @@
   "description": "Practica AngularJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sparrest": "node ./node_modules/node-sparrest/node-sparrest.js",
+    "lite": "lite-server",
+    "dev": "concurrently 'npm run sparrest' 'npm run lite'"
   },
   "repository": {
     "type": "git",
