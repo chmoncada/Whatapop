@@ -10,7 +10,8 @@ angular
                 price: '@itemPrice',
                 src: '@itemSrc',
                 category: '@itemCategory',
-                seller: '@itemSeller'
+                seller: '@itemSeller',
+                id: '@id'
             },
             link: ["scope", "ProductService", function(scope, ProductService) {
                 scope.obtenerRutaImagen = function(src){

@@ -2,17 +2,27 @@ angular
     .module("whatapop")
     .component("productList", {
         templateUrl:"views/products-list.html",
-        controller: ["ProductService", function (ProductService) {
-
-            var self = this;
-
-            ProductService.getProducts().then(function(respuesta) {
-                self.productos = respuesta.data;
-            });
-        }],
-        $routeConfig:[{
-            name: "ProductDetails",
-            path: "/:id",
-            component: "productDetails"
-        }]
+        controller: ProductListComponent
     });
+
+
+function ProductListComponent(ProductService) {
+
+    var selectedId = null;
+    var $ctrl = this;
+
+    this.$routerOnActivate = function (next) {
+
+        // Cargamos los productos para la vista
+        ProductService.getProducts().then(function (respuesta) {
+            $ctrl.productos = respuesta.data;
+            selectedId = next.params.id;
+            console.log(selectedId);
+        });
+    };
+
+    this.isSelected = function(producto) {
+        return (producto.id == selectedId);
+    };
+
+}
