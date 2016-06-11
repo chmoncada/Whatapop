@@ -9,5 +9,10 @@ angular
             ProductService.getProducts().then(function(respuesta) {
                 self.productos = respuesta.data;
             });
+        }],
+        $routeConfig:[{
+            name: "ProductDetails",
+            path: "/:id",
+            component: "productDetails"
         }]
     });

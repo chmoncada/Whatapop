@@ -1,10 +1,14 @@
-<div id="items">
-    <div class="item" ng-repeat="i in $ctrl.productos">
-        <div product-card
-             item-name="{{i.name}}"
-             item-price="{{i.price}}"
-             item-src="{{i.photos[0]}}"
-             item-category="{{i.category.name}}"
-             item-seller="{{i.seller.nick}}"></div>
+<div id="main">
+    <div id="items">
+        <div class="item" ng-repeat="i in $ctrl.productos">
+            <div product-card
+                 item-name="{{i.name}}"
+                 item-price="{{i.price}}"
+                 item-src="{{i.photos[0]}}"
+                 item-category="{{i.category.name}}"
+                 item-seller="{{i.seller.nick}}"></div>
+            <a ng-link="['ProductDetails', {id: i.id }]">{{ i.name }}</a>
+        </div>
     </div>
 </div>
+<ng-outlet></ng-outlet>

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Whatapop - Practica KeepCoding</title>
     <!--AngularJs-->
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
     <!--styles-->
     <link rel="stylesheet" href="styles/whatapop.css">
     <!--Documento de configuracion del modulo-->
     <script src="scripts/app.js"></script>
     <!--Componentes-->
     <script src="scripts/components/products-list.js"></script>
+    <script src="scripts/components/root.js"></script>
+    <script src="scripts/components/new-product.js"></script>
+    <script src="scripts/components/product-details.js"></script>
+
     <!--Controllers-->
     <script src="scripts/controllers/lista-productos.js"></script>
     <!--Services-->
@@ -22,29 +28,7 @@
 </head>
 <!--Hacemos el bootstraping del modulo-->
 <body ng-app="whatapop">
-    <div id="main">
-        <!--Cabecera de la aplicacion-->
-        <header>
-            <h1 align="center">Whatapop</h1>
-        </header>
-        <section ng-controller="ListaProductos">
-            <product-form align="center" press-button="guardarProducto(texto)"></product-form>
-
-            <!--Lista de Productos-->
-            <product-list></product-list>
-
-            <!--<div id="items">
-                <div class="item" ng-repeat="i in productos">
-                    <div product-card
-                            item-name="{{i.name}}"
-                            item-price="{{i.price}}"
-                            item-src="{{i.photos[0]}}"
-                            item-category="{{i.category.name}}"
-                            item-seller="{{i.seller.nick}}"></div>
-                </div>
-            </div>-->
-
-        </section>
-    </div>
+    <!--Componente raiz-->
+    <root></root>
 </body>
 </html>

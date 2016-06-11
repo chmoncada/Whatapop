@@ -8,6 +8,11 @@ angular
             return $http.get("http://localhost:8000/api/products");
 
         };
+
+        this.getProduct = function(id) {
+            return $http.get("http://localhost:8000/api/products/" + id);
+
+        };
         
         // Guardamos el producto
         this.saveProduct = function (producto) {

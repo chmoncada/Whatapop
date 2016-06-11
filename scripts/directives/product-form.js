@@ -6,16 +6,16 @@ angular.module("whatapop")
                 restrict:"EA",
                 templateUrl:"views/product-form.html",
                 scope: {
-                    pressButton: "&"
+                    pressEnter: "&"
                 },
-                link: ["scope",function (scope) {
+                link: function (scope) {
                     
                     // Manejador del boton
                     scope.notifyText = function () {
                         // Notificamos cuando se pulsa el boton de guardar el producto.  RESPETAR EL NOMBRE DEL PARAMETRO!! : texto
-                        scope.pressButton({ texto: scope.texto });
+                        scope.pressEnter({ texto: scope.texto });
                     };
-                }]
+                }
             }
 
         });
