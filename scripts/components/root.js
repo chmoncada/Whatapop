@@ -4,7 +4,12 @@ angular.module("whatapop").component("root", {
         name:"Products",
         path:"/products/...",
         component:"products",
-        useAsDefault: true}
+        useAsDefault: true},
+        {
+            name: "NewProduct",
+            path: "/new-product",
+            component: "newProduct"
+        }
     ],
     templateUrl: "views/root.html"
 });

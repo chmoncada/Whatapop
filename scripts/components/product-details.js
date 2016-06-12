@@ -6,7 +6,7 @@ angular
         controller: ProductDetailComponent
     });
 
-function ProductDetailComponent(ProductService) {
+function ProductDetailComponent(ProductService,$sce) {
 
     var $ctrl = this;
 
@@ -16,8 +16,13 @@ function ProductDetailComponent(ProductService) {
 
         ProductService.getProduct(id).then(function(respuesta) {
             $ctrl.product = respuesta.data;
-            
+            $ctrl.description = $ctrl.product.description;
+
         });
+    };
+
+    this.getHtml = function (html) {
+        return $sce.trustAsHtml(html);
     };
 
     this.gotoProducts = function () {

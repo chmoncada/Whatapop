@@ -1,17 +1,21 @@
-<div id="main">
-    <div id="items">
-        <div class="item"
-            ng-repeat="producto in $ctrl.productos"
-            ng-class="{ selected: $ctrl.isSelected(producto)}">
-            <div product-card
-                item-name="{{producto.name}}"
-                item-price="{{producto.price}}"
-                item-src="{{producto.photos[0]}}"
-                item-category="{{producto.category.name}}"
-                item-seller="{{producto.seller.nick}}"
-                item-id="{{producto.id}}"></div>
-            <a ng-link="['ProductDetails', {id: producto.id }]">{{ producto.name }}</a>
+<div class="row">
+    <div class="twelve columns">
+        <div id="main">
+            <div id="items">
+                <div class="item"
+                     ng-repeat="producto in $ctrl.productos"
+                     ng-class="{ selected: $ctrl.isSelected(producto)}">
+                    <div product-card
+                         item-name="{{producto.name}}"
+                         item-price="{{producto.price}}"
+                         item-src="{{producto.photos[0]}}"
+                         item-category="{{producto.category.name}}"
+                         item-seller="{{producto.seller.nick}}"
+                         item-id="{{producto.id}}"></div>
+                    <a ng-link="['ProductDetails', {id: producto.id }]">Detalles</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
-<ng-outlet></ng-outlet>

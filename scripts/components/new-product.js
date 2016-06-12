@@ -1,6 +1,7 @@
 angular
     .module("whatapop")
     .component("newProduct", {
+        bindings: { $router: "<" },
         templateUrl:"views/new-product.html",
         controller: function (ProductService) {
 
@@ -17,7 +18,9 @@ angular
                 ProductService
                     .saveProduct(producto)
                     .then(function (respuesta) {
-                        // $scope.productos.push(respuesta.data);
+                        console.log(self.$router);
+                        
+                        self.$router.navigate(["/Products"]);
                 });
             };
         }

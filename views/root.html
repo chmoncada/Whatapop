@@ -1,18 +1,29 @@
-<!--Cabecera de la aplicacion-->
-<header>
-    <h1 align="center">Whatapop - PRUEBA</h1>
-</header>
-<!--Barra de navegacion-->
-<nav>
-    <ul>
-        <li>
-            <a ng-link="['Products']">Productos</a>
-        </li>
-        <li>
-            <!--<a ng-link="['NewProduct']">Nuevo Producto</a>-->
-        </li>
-    </ul>
-</nav>
+<div class="container">
+    <!--Cabecera de la aplicacion-->
+    <div class="row">
+        <div class="twelve columns cabecera">
+            <header >
+                <h3 class="titulo" align="left">Whatapop</h3>
+            </header>
+        </div>
+    </div>
+    <!--Barra de navegacion-->
+    <div class="row">
+        <div class="twelve columns">
+            <nav class="barra-navegacion">
+                <ul>
+                    <li>
+                        <a ng-link="['Products']">Productos</a>
+                    </li>
+                    <li>
+                        <a ng-link="['NewProduct']">Nuevo Producto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-<!--Zona dinamica-->
-<ng-outlet></ng-outlet>
+    <!--Zona dinamica-->
+    <ng-outlet></ng-outlet>
+
+</div>

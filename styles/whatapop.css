@@ -4,8 +4,25 @@
     /*width: 960px;*/
     /*height: 300px;*/
 /*}*/
+.titulo {
+    color: white;
+    font-family: Raleway;
+    padding-left: 5rem;
+}
+.cabecera {
+    background-color: #1d9c73;
+}
+.barra-navegacion li {
+    display: inline-block;
+}
+
+.avatar img {
+    border-radius: 50px;
+    height: 10rem;
+    width:  10rem;
+}
 body {
-    background:White;
+    background: #ffffff;
 }
 .ng-invalid {
     border: 1px solid black;
@@ -14,7 +31,7 @@ body {
     cursor:default;
     margin:0 auto 100px;
     padding:10px 25px;
-    width:580px;
+    /*width:580px;*/
 }
 #main h1 {
     font-size:24px;

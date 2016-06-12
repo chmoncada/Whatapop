@@ -11,6 +11,7 @@ function ProductListComponent(ProductService) {
     var selectedId = null;
     var $ctrl = this;
 
+    // this.$routerOnActivate = function (next) {
     this.$routerOnActivate = function (next) {
 
         // Cargamos los productos para la vista
