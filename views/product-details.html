@@ -1,9 +1,9 @@
-<div >
+<div id="details">
     <button class="button-primary" ng-click="$ctrl.gotoProducts()">Back</button>
     <div>
         <img ng-src="http://localhost:8000/{{$ctrl.product.photos[0]}}">
     </div>
-    <p>Precio: {{$ctrl.product.price}}</p>
+    <p>Precio: {{$ctrl.product.price}} USD</p>
     <p>Producto: {{$ctrl.product.name}}</p>
     <p>Descripción:</p>
     <div ng-bind-html="$ctrl.getHtml($ctrl.description)"></div>
@@ -14,6 +14,4 @@
         <img ng-src="http://localhost:8000/{{$ctrl.product.seller.avatar}}">
     </div>
     <p>{{$ctrl.product.seller.nick}}</p>
-
-
 </div>

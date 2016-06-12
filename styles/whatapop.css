@@ -12,8 +12,14 @@
 .cabecera {
     background-color: #1d9c73;
 }
-.barra-navegacion li {
-    display: inline-block;
+.barra-navegacion {
+    height: 45px;
+}
+
+.barra-navegacion a {
+    text-decoration: none;
+    color: white;
+    font-family: Raleway;
 }
 
 .avatar img {
@@ -42,6 +48,26 @@ body {
     clear:both;
     margin: 10px 5px 10px 5px;
 }
+
+#details {
+    cursor:default;
+    margin:0 auto 100px;
+    padding:10px 25px;
+    /*width:580px;*/
+}
+
+#newProductForm {
+    cursor:default;
+    margin:0 auto 100px;
+    padding:10px 25px;
+    /*width:580px;*/
+}
+
+#toolsButtons {
+    padding:0 10px 0;
+    /*width:580px;*/
+}
+
 #main .item {
     border:1px solid black;
     border-radius: 15px;
