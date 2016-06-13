@@ -18,9 +18,10 @@ function ProductListComponent(ProductService) {
         ProductService.getProducts().then(function (respuesta) {
             $ctrl.productos = respuesta.data;
             selectedId = next.params.id;
-            console.log(selectedId);
         });
     };
+
+    this.obtenerRutaImagen = ProductService.obtenerRutaImagenAbsoluta;
 
     this.isSelected = function(producto) {
         return (producto.id == selectedId);

@@ -1,28 +1,30 @@
 <div class="container">
     <!--Cabecera de la aplicacion-->
-    <div class="row">
+    <div class="row ">
+        <!--<div class="four columns cabecera">-->
+            <!--<header >-->
+                <!--<h3 class="titulo" align="left">Whatapop</h3>-->
+            <!--</header>-->
+        <!--</div>-->
         <div class="twelve columns cabecera">
-            <header >
-                <h3 class="titulo" align="left">Whatapop</h3>
-            </header>
+            <!--<header>-->
+            <h3 class="titulo">Whatapop</h3>
+            <!--</header>-->
+            <!--Barra de navegacion-->
+                <!--<nav class="barra-navegacion">-->
+                    <!--<div id="toolsButtons" align="right">-->
+                        <!--<button class="button-primary"-->
+                                <!--ng-link="['NewProduct']"> Nuevo Producto</button>-->
+                        <!--<button class="button-primary"-->
+                                <!--ng-link="['Products']">Productos</button>-->
+                    <!--</div>-->
+                <!--</nav>-->
         </div>
     </div>
-    <!--Barra de navegacion-->
     <div class="row">
-        <div class="twelve columns cabecera">
-            <nav class="barra-navegacion">
-                <div id="toolsButtons" align="right">
-                    <!--<button class="button-primary"-->
-                            <!--ng-link="['NewProduct']"> Nuevo Producto</button>-->
-                    <!--<button class="button-primary"-->
-                            <!--ng-link="['Products']">Productos</button>-->
-                </div>
-
-            </nav>
+        <div class="twelve columns">
+            <!--Zona dinamica-->
+            <ng-outlet></ng-outlet>
         </div>
     </div>
-
-    <!--Zona dinamica-->
-    <ng-outlet></ng-outlet>
-
 </div>

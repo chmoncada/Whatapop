@@ -1,17 +1,27 @@
-<div id="details">
-    <button class="button-primary" ng-click="$ctrl.gotoProducts()">Back</button>
-    <div>
-        <img ng-src="http://localhost:8000/{{$ctrl.product.photos[0]}}">
+<div class="row">
+    <div class="twelve columns">
+        <div>
+            <div class="cabecera" align="right">
+                <button class="button-primary" ng-click="$ctrl.gotoProducts()">Back</button>
+            </div>
+            <div class="productDetails">
+                <div>
+                    <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.ruta)}}">
+                </div>
+                <p>Precio: {{$ctrl.product.price | currency}}</p>
+                <p>Producto: {{$ctrl.product.name}}</p>
+                <p>Descripción:</p>
+                <div ng-bind-html="$ctrl.getHtml($ctrl.description)"></div>
+                <p>Categoria: {{$ctrl.product.category.name}}</p>
+                <p>Fecha de publicación: {{$ctrl.product.published_date | date: "fullDate" }}</p>
+                <p></p>
+                <p>Vendedor:</p>
+                <div class="avatar">
+                    <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.product.seller.avatar)}}">
+                </div>
+                <p>{{$ctrl.product.seller.nick}}</p>
+            </div>
+
+        </div>
     </div>
-    <p>Precio: {{$ctrl.product.price}} USD</p>
-    <p>Producto: {{$ctrl.product.name}}</p>
-    <p>Descripción:</p>
-    <div ng-bind-html="$ctrl.getHtml($ctrl.description)"></div>
-    <p>Categoria: {{$ctrl.product.category.name}}</p>
-    <p></p>
-    <p>Vendedor:</p>
-    <div class="avatar">
-        <img ng-src="http://localhost:8000/{{$ctrl.product.seller.avatar}}">
-    </div>
-    <p>{{$ctrl.product.seller.nick}}</p>
 </div>

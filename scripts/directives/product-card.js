@@ -1,6 +1,6 @@
 angular
     .module("whatapop")
-    .directive('productCard', function () {
+    .directive('productCard', function (ProductService) {
         
         // Devolver la directiva 
         return {
@@ -13,13 +13,10 @@ angular
                 seller: '@itemSeller',
                 id: '@id'
             },
-            link: ["scope", "ProductService", function(scope, ProductService) {
-                scope.obtenerRutaImagen = function(src){
-                    var ruta = ProductService.obtenerRutaImagenAbsoluta(src);
-                    console.log(ruta);
-                    return ruta;
-                };
-            }],
+            link: function(scope) {
+                // obtenemos ruta de imagen
+                scope.rutaImagen = ProductService.obtenerRutaImagenAbsoluta(scope.src);
+            },
             replace: true,
             templateUrl: "views/product-card.html"
         };

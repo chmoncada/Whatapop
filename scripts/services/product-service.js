@@ -1,9 +1,9 @@
 
 angular
     .module("whatapop")
-    .service("ProductService", function($http) {
+    .service("ProductService", function($http, Properties) {
 
-        var productsPromise = $http.get("http://localhost:8000/api/products");
+        var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
 
         // Obtenemos los productos
         this.getProducts = function() {
@@ -12,8 +12,7 @@ angular
 
         // Obtenemos solo el producto para la vista de detalle
         this.getProduct = function(id) {
-            ruta = "http://localhost:8000/api/products/" + id;
-            console.log(ruta);
+            ruta = Properties.urlServidor + Properties.endpointProducts + "/" + id;
             var productPromise =  $http.get(ruta);
             return productPromise;
         };
@@ -21,13 +20,14 @@ angular
 
         // Guardamos el producto
         this.saveProduct = function (producto) {
-            return $http.post("http://localhost:8000/api/products", producto);
+            return $http.post(Properties.urlServidor + Properties.endpointProducts, producto);
         };
 
+        // obtenemos ruta absoluta
         this.obtenerRutaImagenAbsoluta = function(rutaRelativa) {
 
             return rutaRelativa
-                ? ("http://localhost:8000/" + rutaRelativa)
+                ? (Properties.urlServidor + "/" + rutaRelativa)
                 : undefined;
         };
 

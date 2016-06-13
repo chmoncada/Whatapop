@@ -4,16 +4,31 @@
     /*width: 960px;*/
     /*height: 300px;*/
 /*}*/
+body {
+    background: #f6f6f6;
+}
+
+.containerfix {
+    width: inherit;
+}
+
 .titulo {
     color: white;
     font-family: Raleway;
-    padding-left: 5rem;
+    padding-left: 30px;
+    float: left;
 }
+
 .cabecera {
     background-color: #1d9c73;
+    padding-right: 15px;
+    margin-left: 0px;
+    height: 48px;
 }
+
 .barra-navegacion {
     height: 45px;
+    margin-top: 5px;
 }
 
 .barra-navegacion a {
@@ -27,18 +42,18 @@
     height: 10rem;
     width:  10rem;
 }
-body {
-    background: #ffffff;
-}
+
+
 .ng-invalid {
     border: 1px solid black;
 }
 #main {
     cursor:default;
-    margin:0 auto 100px;
-    padding:10px 25px;
-    /*width:580px;*/
+    margin:0 ;
+    width: inherit;
+    /*padding:10px 25px;*/
 }
+
 #main h1 {
     font-size:24px;
     padding-left:10px;
@@ -46,14 +61,14 @@ body {
 
 #items {
     clear:both;
-    margin: 10px 5px 10px 5px;
+    margin: 0px 5px 0px 5px;
 }
 
 #details {
     cursor:default;
     margin:0 auto 100px;
     padding:10px 25px;
-    /*width:580px;*/
+    width: inherit;
 }
 
 #newProductForm {
@@ -64,18 +79,29 @@ body {
 }
 
 #toolsButtons {
-    padding:0 10px 0;
+    padding:0;
     /*width:580px;*/
 }
 
 #main .item {
-    border:1px solid black;
+    box-shadow:0px 1px 1px lightgray;
+    background: white;
     border-radius: 15px;
     display:inline-block;
     margin: 15px 8px 15px;
     width: 170px;
-    height: 300px;
+    height: 350px;
 }
+
+#main .item a {
+    font-size: 12px;
+    font-family: Raleway;
+    margin-left: 5px;
+    color: #1d9c73;
+
+
+}
+
 .item-int {
     margin:0;
     /*padding:10px 0 30px;*/
@@ -84,26 +110,51 @@ body {
     margin:0;
     padding-left:10px;
 }
+
+.data {
+    height: 320px;
+}
+
 .item-int img {
     border-radius: 15px 15px 0 0;
     margin:0;
     width:170px;
 }
-.item-int .data {
-    margin:0;
-    text-align:center;
+.item-int p {
+    margin-left:5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    /*text-align:center;*/
+    font-size: 12px;
+    font-family: Raleway;
 }
-.data span {
-    font-size:12px;
-    padding:0 10px;
-}
+
 .right {
     float:right;
+    margin-right: 5px;
+    color: #1d9c73;
+    font-size: 12px;
 }
 .left {
     float:left;
-    text-align: left;
+    margin-left: 5px;
+    color: #1d9c73;
+    font-size: 12px;
 }
+
+.productTitle {
+    clear: both;
+    font-weight: bold;
+}
+
+.productType {
+    font-style: italic;
+}
+
+.productDetails {
+    margin-top: 20px;
+}
+
 .note {
     color:#444444;
     font-size:13px;
