@@ -9,7 +9,7 @@ angular
     });
 
 // inyectamos los componentes
-function ProductListComponent(ProductService, $haversine, $filter) {
+function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
 
     var selectedId = null;
     var $ctrl = this;
@@ -21,6 +21,7 @@ function ProductListComponent(ProductService, $haversine, $filter) {
 
         ProductService.getUsers().then(function (respuesta) {
             $ctrl.users = respuesta.data;
+            console.log($ctrl.users);
             $ctrl.cercanos=[1,2,3,4,5,6];
             ProductService.getProducts().then(function (respuesta) {
                 $ctrl.productos = respuesta.data;
@@ -62,11 +63,12 @@ function ProductListComponent(ProductService, $haversine, $filter) {
                         }
                         distance = $haversine.distance(coord1, coord2)/1000;
                         if (distance < $ctrl.filtroDistancia) {
-                            $ctrl.cercanos.push(i);
+                            $ctrl.cercanos.push(i+1);
                         }
-                        console.log(distance + " kms");
+                        console.log($ctrl.users[i].name + ": " + distance + " kms");
                     };
                     console.log($ctrl.cercanos);
+                    $rootScope.$apply();
 
                 },
 

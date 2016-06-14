@@ -14,13 +14,13 @@ body {
 
 .titulo {
     color: white;
-    font-family: Raleway;
+    font-family: "Helvetica Neue";
     padding-left: 30px;
     float: left;
 }
 
 .cabecera {
-    background-color: #1d9c73;
+    background-color: #106cc8;
     padding-right: 15px;
     margin-left: 0px;
     height: 60px;
@@ -34,7 +34,7 @@ body {
 .barra-navegacion a {
     text-decoration: none;
     color: white;
-    font-family: Raleway;
+    font-family: "Helvetica Neue";
 }
 
 .avatar img {
@@ -95,9 +95,9 @@ body {
 
 #main .item a {
     font-size: 12px;
-    font-family: Raleway;
+    font-family: "Helvetica Neue";
     margin-left: 5px;
-    color: #1d9c73;
+    color: #106cc8;
 
 
 }
@@ -126,19 +126,19 @@ body {
     margin-bottom: 5px;
     /*text-align:center;*/
     font-size: 12px;
-    font-family: Raleway;
+    font-family: "Helvetica Neue";
 }
 
 .right {
     float:right;
     margin-right: 5px;
-    color: #1d9c73;
+    color: #106cc8;
     font-size: 12px;
 }
 .left {
     float:left;
     margin-left: 5px;
-    color: #1d9c73;
+    color: #106cc8;
     font-size: 12px;
 }
 
@@ -163,9 +163,11 @@ body {
 
 #mybutton {
     background-position: center;
-    background-image:url("../resources/location_icon.svg");
+    background-image:url("../resources/Media_Viewer_Icon_-_Location.svg");
     background-repeat:no-repeat;
-    background-color: #33C3F0;
+
+    /*background-color: #33C3F0;*/
+    background-color: #106cc8;
     border-color: transparent;
     margin-top: 0;
 
