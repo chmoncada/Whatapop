@@ -14,3 +14,4 @@ angular.module("whatapop").filter("ProductType", function () {
         return type;
     };
 });
+

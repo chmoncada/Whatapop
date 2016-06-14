@@ -4,10 +4,16 @@ angular
     .service("ProductService", function($http, Properties) {
 
         var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
+        var userPromise = $http.get(Properties.urlServidor + Properties.endpointUsers);
 
         // Obtenemos los productos
         this.getProducts = function() {
             return productsPromise;
+        };
+
+        // Obtenemos los productos
+        this.getUsers = function() {
+            return userPromise;
         };
 
         // Obtenemos solo el producto para la vista de detalle
@@ -29,6 +35,16 @@ angular
             return rutaRelativa
                 ? (Properties.urlServidor + "/" + rutaRelativa)
                 : undefined;
+        };
+
+        this.filteredLocation = function () {
+            if($ctrl.productos) {
+                return $ctrl.productos.filter(function (producto) {
+                    return $ctrl.cercanos.indexOf(producto.seller.id) !== -1;
+                });
+            } else {
+                return null;
+            }
         };
 
     });

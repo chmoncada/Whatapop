@@ -1,7 +1,7 @@
 
 
 // Setter del modulo
-angular.module("whatapop",["ngComponentRouter"]);
+angular.module("whatapop",["ngComponentRouter", "dahr.ng-haversine"]);
 
 angular.module("whatapop").config(function ($locationProvider) {
    $locationProvider.html5Mode(true); 

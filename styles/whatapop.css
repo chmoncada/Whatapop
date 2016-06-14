@@ -23,7 +23,7 @@ body {
     background-color: #1d9c73;
     padding-right: 15px;
     margin-left: 0px;
-    height: 48px;
+    height: 60px;
 }
 
 .barra-navegacion {
@@ -159,4 +159,15 @@ body {
     color:#444444;
     font-size:13px;
     text-align:right;
+}
+
+#mybutton {
+    background-position: center;
+    background-image:url("../resources/location_icon.svg");
+    background-repeat:no-repeat;
+    background-color: #33C3F0;
+    border-color: transparent;
+    margin-top: 0;
+
+
 }

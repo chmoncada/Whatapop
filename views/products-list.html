@@ -1,8 +1,7 @@
 <div class="container containerfix">
     <div class="row">
-        <div class="twelve columns">
+        <div class="twelve columns cabecera" align="right">
             <!--Filtro de Productos-->
-            <div class="cabecera" align="right">
                 <input
                         type="text"
                         placeholder="Buscar producto..."
@@ -13,7 +12,14 @@
                     <option value="Películas">Películas</option>
                     <option value="Libros">Libros</option>
                 </select>
-            </div>
+                <select ng-model="$ctrl.filtroDistancia">
+                    <option value="999999999">Any</option>
+                    <option value="1">1 km</option>
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                </select>
+                <button id="mybutton" ng-click="$ctrl.geoPosition()"></button>
+
         </div>
     <div class="row">
         <div class="twelve columns">
@@ -22,7 +28,10 @@
             <div id="main">
                 <div id="items">
                     <div class="item"
-                         ng-repeat="producto in $ctrl.productos | filter: filtroCategoria | filter: { name: filtroProducto }"
+                         ng-repeat="producto in $ctrl.productos
+                         | filteredLocation:$ctrl.cercanos:'seller':'id'
+                         | filter: filtroCategoria
+                         | filter: { name: filtroProducto }"
                          ng-class="{ selected: $ctrl.isSelected(producto)}">
                         <div product-card
                              item-name="{{producto.name}}"
@@ -30,7 +39,8 @@
                              item-src="{{producto.photos[0]}}"
                              item-category="{{producto.category.name}}"
                              item-seller="{{producto.seller.nick}}"
-                             item-id="{{producto.id}}"></div>
+                             item-id="{{producto.id}}">
+                        </div>
                         <a ng-link="['ProductDetails', {id: producto.id }]">Detalles</a>
                     </div>
                 </div>
