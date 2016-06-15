@@ -2,27 +2,24 @@
     <div class="row">
         <div class="twelve columns cabecera" align="right">
             <!--Filtro de Productos-->
-                <input
-                        type="text"
-                        placeholder="Buscar producto..."
-                        ng-model="filtroProducto">
-                <select ng-model="filtroCategoria">
-                    <option value="">Todos</option>
-                    <option value="Videojuegos">Videojuegos</option>
-                    <option value="Películas">Películas</option>
-                    <option value="Libros">Libros</option>
-                </select>
-                <select ng-model="$ctrl.filtroDistancia">
-                    <option value="99999">Any</option>
-                    <option value="1">1 km</option>
-                    <option value="5">5 km</option>
-                    <option value="10">10 km</option>
-                </select>
-
-                <img src="http://s.cdpn.io/3/kiwi.svg" height="38px" width="38px" alt="">
-                <button ng-click="$ctrl.geoPosition()"></button>
-
-
+            <input
+                    type="text"
+                    placeholder="Buscar producto..."
+                    ng-model="filtroProducto">
+            <select ng-model="filtroCategoria">
+                <option value="">Todos</option>
+                <option value="Videojuegos">Videojuegos</option>
+                <option value="Películas">Películas</option>
+                <option value="Libros">Libros</option>
+            </select>
+            <select
+                    ng-change="$ctrl.geoPosition()"
+                    ng-model="$ctrl.filtroDistancia">
+                <option value="99999">Any</option>
+                <option value="1">1 km</option>
+                <option value="5">5 km</option>
+                <option value="10">10 km</option>
+            </select>
         </div>
     <div class="row">
         <div class="twelve columns">

@@ -37,13 +37,10 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
     this.geoPosition = function () {
 
         if (navigator.geolocation) {
-
             // Solicitamos la posición.
             navigator.geolocation.getCurrentPosition(
-
                 // En caso de obtener la posición.
                 function(datos) {
-
                     var coord1 = {
                         "latitude": datos.coords.latitude,
                         "longitude": datos.coords.longitude
@@ -68,7 +65,6 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
                     };
                     console.log($ctrl.cercanos);
                     $rootScope.$apply();
-
                 },
 
                 // El usuario no autorizó la petición de posición.
