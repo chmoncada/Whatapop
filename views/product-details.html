@@ -15,6 +15,7 @@
                 <p>Categoria: {{$ctrl.product.category.name}}</p>
                 <p>Fecha de publicación: {{$ctrl.product.published_date | date: "fullDate" }}</p>
                 <p></p>
+                <button ng-click=$ctrl.addToFavorites($ctrl.product.id)>Añadir a Favorito</button>
                 <p>Vendedor:</p>
                 <div class="avatar">
                     <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.product.seller.avatar)}}">

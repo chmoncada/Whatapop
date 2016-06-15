@@ -14,14 +14,13 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
     var selectedId = null;
     var $ctrl = this;
 
-    $ctrl.filtroDistancia = null;
+    //$ctrl.filtroDistancia = 99999; // hacemos que se carguen los productos al inicio
 
     // recuperamos los arrays para las vistas
     this.$routerOnActivate = function (next) {
 
         ProductService.getUsers().then(function (respuesta) {
             $ctrl.users = respuesta.data;
-            console.log($ctrl.users);
             $ctrl.cercanos=[1,2,3,4,5,6];
             ProductService.getProducts().then(function (respuesta) {
                 $ctrl.productos = respuesta.data;

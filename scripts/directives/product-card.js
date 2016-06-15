@@ -1,6 +1,6 @@
 angular
     .module("whatapop")
-    .directive('productCard', function (ProductService) {
+    .directive('productCard', function (ProductService, $localStorage) {
         
         // Devolver la directiva 
         return {
@@ -16,6 +16,8 @@ angular
             link: function(scope) {
                 // obtenemos ruta de imagen
                 scope.rutaImagen = ProductService.obtenerRutaImagenAbsoluta(scope.src);
+                
+                
             },
             replace: true,
             templateUrl: "views/product-card.html"
