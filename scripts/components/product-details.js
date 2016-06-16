@@ -67,7 +67,7 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
     };
 
     $ctrl.isFavorite = function (index) {
-        console.log($localStorage.favorites.indexOf(index) !== -1)
+        //console.log($localStorage.favorites)
         if($localStorage.favorites.indexOf(index) !== -1){
             return true;
         }

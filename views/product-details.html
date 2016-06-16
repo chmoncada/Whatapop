@@ -8,13 +8,10 @@
                 <div>
                     <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.ruta)}}">
                 </div>
-                <button ng-class="{ 'favorite-active': $ctrl.isFavorite($ctrl.product.id) }"
-                        ng-click=$ctrl.addToFavorites($ctrl.product.id)>Añadir a Favorito</button>
-                <button ng-class="{ 'favorite-active': $ctrl.isFavorite($ctrl.product.id) }"></button>
-
-                <input type="image" src="/resources/free-svg-file-heart-1.svg" ng-class="{ 'favorite-active': $ctrl.isFavorite($ctrl.product.id) }"
-                       >
-
+                <p class="favoriterow">
+                <span ng-class="{ 'favorite-active': $ctrl.isFavorite($ctrl.product.id) }"
+                      ng-click=$ctrl.addToFavorites($ctrl.product.id)>&#x2605;</span>
+                </p>
                 <p>Precio: {{$ctrl.product.price | currency}}</p>
                 <p>Producto: {{$ctrl.product.name}}</p>
                 <p>Descripción:</p>
