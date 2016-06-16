@@ -5,15 +5,21 @@ angular
 
         var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
         var userPromise = $http.get(Properties.urlServidor + Properties.endpointUsers);
-
+        var categoryPromise = $http.get(Properties.urlServidor + Properties.endpointCategories);
+        
         // Obtenemos los productos
         this.getProducts = function() {
             return productsPromise;
         };
 
-        // Obtenemos los productos
+        // Obtenemos los usuarios
         this.getUsers = function() {
             return userPromise;
+        };
+
+        // Obtenemos los usuarios
+        this.getCategories = function() {
+            return categoryPromise;
         };
 
         // Obtenemos solo el producto para la vista de detalle
@@ -27,6 +33,11 @@ angular
         // Guardamos el producto
         this.saveProduct = function (producto) {
             return $http.post(Properties.urlServidor + Properties.endpointProducts, producto);
+        };
+
+        // Guardamos el usuario
+        this.saveUser = function (usuario) {
+            return $http.post(Properties.urlServidor + Properties.endpointUsers, usuario);
         };
 
         // obtenemos ruta absoluta

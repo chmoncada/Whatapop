@@ -9,6 +9,11 @@ angular.module("whatapop").component("root", {
             name: "NewProduct",
             path: "/new-product",
             component: "newProduct"
+        },
+        {
+            name: "NewUser",
+            path: "/new-user",
+            component: "newUser"
         }
     ],
     templateUrl: "views/root.html"

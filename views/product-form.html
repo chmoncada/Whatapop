@@ -1,7 +1,35 @@
 <div>
-    <!--Formulario de alta de productos-->
-    <div>
-        <input type="text" ng-model="texto">
-        <button class="button-primary" ng-click="notifyText()">Aceptar</button>
-    </div>
+
+    <!-- Nombre de la receta -->
+    <label for="nombre-producto">
+        Nombre producto
+    </label>
+    <input
+            id="nombre-producto"
+            type="text"
+            placeholder="ingrese nombre de producto..."
+            class="u-full-width"
+            ng-model="producto.name"
+            required>
+    <label for="descripcion-producto">
+        Descipción
+    </label>
+    <input
+            id="descripcion-producto"
+            type="text"
+            placeholder="ingrese descripcion..."
+            class="u-full-width"
+            ng-model="producto.description"
+            required>
+
+
+
+    <!-- Botón para guardar receta -->
+    <button
+            ng-click="notificarTexto()"
+            ng-disabled="!puedoGuardar()"
+            class="u-full-width button-primary">
+        Aceptar
+    </button>
+
 </div>

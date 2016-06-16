@@ -57,15 +57,16 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
     // Funcion para anadir al localstorage, se uso la dependencia ngStorage
     $ctrl.addToFavorites = function(index) {
         if($localStorage.favorites.indexOf(index) !== -1){
-            console.log("BORRADO DEL ARRAY");
+            //console.log("BORRADO DEL ARRAY");
             var start = $localStorage.favorites.indexOf(index);
             $localStorage.favorites.splice(start,1);
         } else {
-            console.log("AÑADIDO AL ARRAY");
+            //console.log("AÑADIDO AL ARRAY");
             $localStorage.favorites.push(index);
         }
     };
 
+    //Funcion que chequea si el index es favorito para cargar la clase del boton favorito
     $ctrl.isFavorite = function (index) {
         //console.log($localStorage.favorites)
         if($localStorage.favorites.indexOf(index) !== -1){

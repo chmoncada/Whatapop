@@ -21,12 +21,22 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
 
         ProductService.getUsers().then(function (respuesta) {
             $ctrl.users = respuesta.data;
-            $ctrl.cercanos=[1,2,3,4,5,6];
-            ProductService.getProducts().then(function (respuesta) {
-                $ctrl.productos = respuesta.data;
-                selectedId = next.params.id;
+            $ctrl.cercanos=[];
+            //Inicializamos el array de cercanos para que cargue la pagina inicial
+            for (var i=0; i< $ctrl.users.length; i++){
+                $ctrl.cercanos.push($ctrl.users[i].id);
+            };
+            //console.log($ctrl.cercanos);
+            //$ctrl.cercanos=[1,2,3,4,5,6];
 
-            });
+            ProductService.getCategories().then(function (respuesta) {
+                $ctrl.categories = respuesta.data;
+                console.log($ctrl.categories);
+                ProductService.getProducts().then(function (respuesta) {
+                    $ctrl.productos = respuesta.data;
+                    selectedId = next.params.id;
+                });               
+            });       
         });
 
     };
@@ -61,9 +71,9 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
                         if (distance < $ctrl.filtroDistancia) {
                             $ctrl.cercanos.push(i+1);
                         }
-                        console.log($ctrl.users[i].name + ": " + distance + " kms");
+                        //console.log($ctrl.users[i].name + ": " + distance + " kms");
                     };
-                    console.log($ctrl.cercanos);
+                    //console.log($ctrl.cercanos);
                     $rootScope.$apply();
                 },
 

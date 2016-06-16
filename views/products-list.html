@@ -6,12 +6,12 @@
                     type="text"
                     placeholder="Buscar producto..."
                     ng-model="filtroProducto">
+            <!--Filtro dinamico de categorias-->
             <select ng-model="filtroCategoria">
                 <option value="">Todos</option>
-                <option value="Videojuegos">Videojuegos</option>
-                <option value="Películas">Películas</option>
-                <option value="Libros">Libros</option>
+                <option ng-repeat="option in $ctrl.categories" value="{{option.name}}">{{option.name}}</option>
             </select>
+            <!--Filtro de Geolocalizacion-->
             <select
                     ng-change="$ctrl.geoPosition()"
                     ng-model="$ctrl.filtroDistancia">
@@ -21,6 +21,7 @@
                 <option value="10">10 km</option>
             </select>
         </div>
+    </div>
     <div class="row">
         <div class="twelve columns">
             </div>
