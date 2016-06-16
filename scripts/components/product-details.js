@@ -66,4 +66,11 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
         }
     };
 
+    $ctrl.isFavorite = function (index) {
+        console.log($localStorage.favorites.indexOf(index) !== -1)
+        if($localStorage.favorites.indexOf(index) !== -1){
+            return true;
+        }
+    };
+
 }
