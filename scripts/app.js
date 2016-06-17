@@ -1,7 +1,7 @@
 
 
 // Setter del modulo
-angular.module("whatapop",["ngComponentRouter", "dahr.ng-haversine", "ngStorage"]);
+angular.module("whatapop",["ngComponentRouter", "dahr.ng-haversine", "ngStorage","dahr.ng-image-picker"]);
 
 angular.module("whatapop").config(function ($locationProvider) {
    $locationProvider.html5Mode(true); 

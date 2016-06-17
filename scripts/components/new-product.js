@@ -7,7 +7,7 @@ angular
 
             var $ctrl = this;
 
-            this.$routerOnActivate = function (next) {
+            this.$onInit = function (next) {
 
                 //Cargamos las categorias y usuarios existentes para el formulario
                 ProductService.getCategories().then(function (respuesta) {

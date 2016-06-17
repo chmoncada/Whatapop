@@ -9,6 +9,14 @@
             <h1>NUEVO USUARIO...</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="twelve columns">
+            <label for="newUserAvatarInput">Avatar</label>
+            <image-picker id="newUserAvatarInput"
+                          image-selected="$ctrl.seleccionarImagen(imageFile)"
+                          image-deselected="$ctrl.deseleccionarImagen()"></image-picker>
+         </div>
+    </div>
     <form ng-submit="$ctrl.saveNewUser()">
         <div class="row">
             <div class="six columns">
@@ -23,7 +31,7 @@
         <div class="row">
             <div class="six columns">
                 <label for="emailInput">email</label>
-                <input class="u-full-width" type="email" ng-model="$ctrl.newUser.email" placeholder="test@mailbox.com" id="emailInput" required>
+                <input class="u-full-width" type="email" ng-model="$ctrl.newUser.email" placeholder="Ingrese email..." id="emailInput" required>
             </div>
             <div class="six columns">
                 <label for="obtainPosition">Obtener ubicación</label>
