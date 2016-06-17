@@ -7,10 +7,39 @@
     <div class="row">
         <div class="twelve columns">
             <h1>NUEVO USUARIO...</h1>
-
-            <user-form
-                    align="left"
-                    press-enter="$ctrl.saveUser(texto)"></user-form>
         </div>
     </div>
+    <form ng-submit="$ctrl.saveNewUser()">
+        <div class="row">
+            <div class="six columns">
+                <label for="nameInput">Nombre Usuario</label>
+                <input class="u-full-width" type="text" ng-model="$ctrl.newUser.name" placeholder="Ingrese nombre.." id="nameInput" required>
+            </div>
+            <div class="six columns">
+                <label for="nickInput">Nickname</label>
+                <input class="u-full-width" type="text" ng-model="$ctrl.newUser.nick" placeholder="Ingrese nickname.." id="nickInput" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="emailInput">email</label>
+                <input class="u-full-width" type="email" ng-model="$ctrl.newUser.email" placeholder="test@mailbox.com" id="emailInput" required>
+            </div>
+            <div class="six columns">
+                <label for="obtainPosition">Obtener ubicación</label>
+                <button  type="button" id="obtainPosition" class="button-primary" ng-click="$ctrl.newUserPosition()">OK</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label class="formTitle">Latitud</label>
+                <p class="text-grid">{{$ctrl.newUser.latitude}}</p>
+            </div>
+            <div class="six columns">
+                <label class="formTitle">Longitud</label>
+                <p class="text-grid">{{$ctrl.newUser.longitude}}</p>
+            </div>
+        </div>
+        <input class="button-primary" type="submit" value="Submit">
+    </form>
 </div>

@@ -7,9 +7,41 @@
     <div class="row">
         <div class="twelve columns">
             <h1>NUEVO PRODUCTO...</h1>
-            <product-form
-                    align="left"
-                    press-enter="$ctrl.saveProduct(texto)"></product-form>
+            <!--<product-form-->
+                    <!--align="left"-->
+                    <!--press-enter="$ctrl.saveProduct(texto)"></product-form>-->
         </div>
     </div>
+    <form ng-submit="$ctrl.saveNewProduct()">
+        <div class="row">
+            <div class="six columns">
+                <label for="productNameInput">Nombre Producto</label>
+                <input class="u-full-width" type="text" ng-model="$ctrl.newProduct.name" placeholder="Ingrese nombre.." id="productNameInput" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="productPriceInput">Precio (USD) </label>
+                <input class="u-full-width" type="number" ng-model="$ctrl.newProduct.price"  placeholder="0.00" id="productPriceInput"  required step="0.01" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" >
+            </div>
+            <div class="six columns">
+                <!--Por ahora las categorias se escogeran de las existentes-->
+                <label for="productCategoryInput">Categoria</label>
+                <select class="u-full-width" ng-model="$ctrl.newProduct.category.name" id="productCategoryInput">
+                    <option ng-repeat="option in $ctrl.categories" value="{{option.name}}">{{option.name}}</option>
+                </select>
+            </div>
+        </div>
+        <label for="productDescriptionInput">Descripción</label>
+        <textarea required class="u-full-width" ng-model="$ctrl.newProduct.description" placeholder="Ingrese Descripción …" id="productDescriptionInput"></textarea>
+        <div class="row">
+            <div class="six columns">
+                <label for="productSellerInput">Vendedor</label>
+                <select class="u-full-width" ng-model="$ctrl.newProduct.seller.nick" id="productSellerInput">
+                    <option ng-repeat="option in $ctrl.users" value="{{option.nick}}">{{option.name}}</option>
+                </select>
+            </div>
+        </div>
+        <input class="button-primary" type="submit" value="Submit">
+    </form>
 </div>

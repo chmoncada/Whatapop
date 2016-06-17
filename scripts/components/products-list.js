@@ -11,7 +11,7 @@ angular
 // inyectamos los componentes
 function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
 
-    var selectedId = null;
+    //var selectedId = null;
     var $ctrl = this;
 
     //$ctrl.filtroDistancia = 99999; // hacemos que se carguen los productos al inicio
@@ -31,10 +31,10 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
 
             ProductService.getCategories().then(function (respuesta) {
                 $ctrl.categories = respuesta.data;
-                console.log($ctrl.categories);
+                //console.log($ctrl.categories);
                 ProductService.getProducts().then(function (respuesta) {
                     $ctrl.productos = respuesta.data;
-                    selectedId = next.params.id;
+                    //selectedId = next.params.id;
                 });               
             });       
         });
@@ -89,8 +89,5 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
         }
     };
 
-    this.isSelected = function(producto) {
-        return (producto.id == selectedId);
-    };
 
 }
