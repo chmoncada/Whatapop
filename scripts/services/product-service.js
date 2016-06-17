@@ -3,18 +3,18 @@ angular
     .module("whatapop")
     .service("ProductService", function($http, Properties) {
 
-        var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
-        var userPromise = $http.get(Properties.urlServidor + Properties.endpointUsers);
+        //var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
+        //var userPromise = $http.get(Properties.urlServidor + Properties.endpointUsers);
         var categoryPromise = $http.get(Properties.urlServidor + Properties.endpointCategories);
         
         // Obtenemos los productos
         this.getProducts = function() {
-            return productsPromise;
+            return $http.get(Properties.urlServidor + Properties.endpointProducts);
         };
 
         // Obtenemos los usuarios
         this.getUsers = function() {
-            return userPromise;
+            return $http.get(Properties.urlServidor + Properties.endpointUsers);
         };
 
         // Obtenemos los usuarios

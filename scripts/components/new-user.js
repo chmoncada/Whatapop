@@ -113,10 +113,7 @@ angular
                 else {
                     newUserPromise = $http.post(Propiedades.urlServidor + Propiedades.endpointRecetas, receta);
                 }
-
                 return newUserPromise;
-
-
             };
 
             // Guardamos el documento de imagen indicado para grabarlo

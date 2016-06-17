@@ -12,6 +12,14 @@
                     <!--press-enter="$ctrl.saveProduct(texto)"></product-form>-->
         </div>
     </div>
+    <div class="row">
+        <div class="twelve columns">
+            <label for="newProductImageInput">Imagen</label>
+            <image-picker id="newProductImageInput"
+                          image-selected="$ctrl.seleccionarImagen(imageFile)"
+                          image-deselected="$ctrl.deseleccionarImagen()"></image-picker>
+        </div>
+    </div>
     <form ng-submit="$ctrl.saveNewProduct()">
         <div class="row">
             <div class="six columns">
