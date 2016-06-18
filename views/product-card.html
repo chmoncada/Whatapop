@@ -3,12 +3,12 @@
     <div class="data">
         <img
                 width="170px"
-                ng-src="{{rutaImagen}}">
-        <span class="left">{{price | currency}}</span>
-        <span class="right">{{category}}</span>
+                ng-src="{{::rutaImagen}}">
+        <span class="left">{{::price | currency}}</span>
+        <span class="right">{{::category}}</span>
         <div>
-            <p class="productTitle">{{name | ProductSummary }}</p>
-            <p class="productType">{{name | ProductType}}</p>
+            <p class="productTitle">{{::name | ProductSummary }}</p>
+            <p class="productType">{{::name | ProductType}}</p>
 
         </div>
     </div>

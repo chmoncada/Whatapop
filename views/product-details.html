@@ -1,32 +1,39 @@
 <div class="row">
     <div class="twelve columns">
-        <div>
-            <div class="cabecera" align="right">
+        <div class="cabecera" align="right">
                 <button class="button-primary" ng-click="$ctrl.gotoProducts()">Back</button>
-            </div>
-            <div class="productDetails">
-                <div>
-                    <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.ruta)}}">
-                </div>
-                <p class="favoriterow">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="six columns productDetails">
+        <img class="u-max-full-width" ng-src="{{ ::$ctrl.obtenerRutaImagen($ctrl.ruta)}}">
+    </div>
+    <div class="six columns productDetails">
+        <label for="ProductStar">Favorito</label>
+        <p id="ProductStar" class="favoriterow">
                 <span ng-class="{ 'favorite-active': $ctrl.isFavorite($ctrl.product.id) }"
                       ng-click=$ctrl.addToFavorites($ctrl.product.id)>&#x2605;</span>
-                </p>
-                <p>Precio: {{$ctrl.product.price | currency}}</p>
-                <p>Producto: {{$ctrl.product.name}}</p>
-                <p>Descripción:</p>
-                <div ng-bind-html="$ctrl.getHtml($ctrl.description)"></div>
-                <p>Categoria: {{$ctrl.product.category.name}}</p>
-                <p>Fecha de publicación: {{$ctrl.product.published_date | date: "fullDate" }}</p>
-                <p></p>
-
-                <p>Vendedor:</p>
-                <div class="avatar">
-                    <img ng-src="{{ $ctrl.obtenerRutaImagen($ctrl.product.seller.avatar)}}">
-                </div>
-                <p>{{$ctrl.product.seller.nick}}</p>
-            </div>
-
+        </p>
+        <label for="ProductPrice">Precio</label>
+        <p id="ProductPrice">{{::$ctrl.product.price | currency}}</p>
+        <label for="ProductName">Producto</label>
+        <p id="ProductName">{{::$ctrl.product.name}}</p>
+        <label for="ProductAvatar">Vendedor</label>
+        <div id="ProductAvatar" class="avatar">
+            <img ng-src="{{ ::$ctrl.obtenerRutaImagen($ctrl.product.seller.avatar)}}">
         </div>
+        <p><em>{{::$ctrl.product.seller.nick}}</em></p>
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        <label for="ProductCategory">Categoría</label>
+        <p id="ProductCategory">{{:: $ctrl.product.category.name}}</p>
+        <label for="ProductDate">Fecha de Publicación</label>
+        <p id="ProductDate">{{::$ctrl.product.published_date | date: "fullDate" }}</p>
+        <label for="ProductDescription">Descripción:</label>
+        <div id="ProductDescription" ng-bind-html="$ctrl.getHtml($ctrl.description)"></div>
+
     </div>
 </div>

@@ -1,6 +1,12 @@
 angular.module("whatapop").filter("ProductSummary", function () {
    return function (texto) {
-       var separador = texto.indexOf("[");
+       // Para procesar el texto solo si tiene el caracter[
+       if( texto.indexOf("[") !== -1){
+           var separador = texto.indexOf("[");
+       } else {
+           separador = texto.length - 1
+       }
+
        var titleSummary = texto.substring(0,separador);
        return titleSummary;
    };

@@ -6,18 +6,17 @@
     </div>
     <div class="row">
         <div class="twelve columns">
-            <h1>NUEVO PRODUCTO...</h1>
-            <!--<product-form-->
-                    <!--align="left"-->
-                    <!--press-enter="$ctrl.saveProduct(texto)"></product-form>-->
+            <h2><strong>Ingrese Nuevo Producto</strong></h2>
         </div>
     </div>
     <div class="row">
-        <div class="twelve columns">
+        <div class="six columns">
             <label for="newProductImageInput">Imagen</label>
-            <image-picker id="newProductImageInput"
-                          image-selected="$ctrl.seleccionarImagen(imageFile)"
-                          image-deselected="$ctrl.deseleccionarImagen()"></image-picker>
+            <image-picker
+                    class="u-max-full-width"
+                    id="newProductImageInput"
+                    image-selected="$ctrl.seleccionarImagen(imageFile)"
+                    image-deselected="$ctrl.deseleccionarImagen()"></image-picker>
         </div>
     </div>
     <form ng-submit="$ctrl.saveNewProduct()">
@@ -36,7 +35,7 @@
                 <!--Por ahora las categorias se escogeran de las existentes-->
                 <label for="productCategoryInput">Categoria</label>
                 <select class="u-full-width" ng-model="$ctrl.newProduct.category.name" id="productCategoryInput">
-                    <option ng-repeat="option in $ctrl.categories" value="{{option.name}}">{{option.name}}</option>
+                    <option ng-repeat="option in ::$ctrl.categories" value="{{ ::option.name}}">{{ ::option.name}}</option>
                 </select>
             </div>
         </div>
@@ -46,7 +45,7 @@
             <div class="six columns">
                 <label for="productSellerInput">Vendedor</label>
                 <select class="u-full-width" ng-model="$ctrl.newProduct.seller.nick" id="productSellerInput">
-                    <option ng-repeat="option in $ctrl.users" value="{{option.nick}}">{{option.name}}</option>
+                    <option ng-repeat="option in ::$ctrl.users" value="{{::option.nick}}">{{::option.name}}</option>
                 </select>
             </div>
         </div>

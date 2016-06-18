@@ -9,7 +9,7 @@
             <!--Filtro dinamico de categorias-->
             <select ng-model="filtroCategoria">
                 <option value="">Todos</option>
-                <option ng-repeat="option in $ctrl.categories" value="{{option.name}}">{{option.name}}</option>
+                <option ng-repeat="option in ::$ctrl.categories" value="{{::option.name}}">{{::option.name}}</option>
             </select>
             <!--Filtro de Geolocalizacion-->
             <select
@@ -35,12 +35,12 @@
                          | filter: { name: filtroProducto }"
                          >
                         <div product-card
-                             item-name="{{producto.name}}"
-                             item-price="{{producto.price}}"
-                             item-src="{{producto.photos[0]}}"
-                             item-category="{{producto.category.name}}"
-                             item-seller="{{producto.seller.nick}}"
-                             item-id="{{producto.id}}">
+                             item-name="{{::producto.name}}"
+                             item-price="{{::producto.price}}"
+                             item-src="{{::producto.photos[0]}}"
+                             item-category="{{::producto.category.name}}"
+                             item-seller="{{::producto.seller.nick}}"
+                             item-id="{{::producto.id}}">
                         </div>
                         <a ng-link="['ProductDetails', {id: producto.id }]">Detalles</a>
                     </div>
