@@ -1,4 +1,4 @@
-angular.module("whatapop").filter("filteredLocation", function ($filter) {
+angular.module("whatapop").filter("filteredLocation",[ "$filter", function ($filter) {
     return function (arrayToFilter, arrayFilter, seller, element) {
         if(arrayFilter) {
             return $filter("filter")(arrayToFilter, function(listItem) {
@@ -6,4 +6,4 @@ angular.module("whatapop").filter("filteredLocation", function ($filter) {
             });
         }
     };
-});
+}]);

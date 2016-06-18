@@ -1,6 +1,6 @@
 angular
     .module("whatapop")
-    .directive('productCard', function (ProductService, $localStorage) {
+    .directive('productCard',[ "ProductService", function (ProductService) {
         
         // Devolver la directiva 
         return {
@@ -22,4 +22,4 @@ angular
             replace: true,
             templateUrl: "views/product-card.html"
         };
-});
+}]);

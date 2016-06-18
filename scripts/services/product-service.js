@@ -1,7 +1,7 @@
 
 angular
     .module("whatapop")
-    .service("ProductService", function($http, Properties) {
+    .service("ProductService",["$http","Properties", function($http, Properties) {
 
         //var productsPromise = $http.get(Properties.urlServidor + Properties.endpointProducts);
         //var userPromise = $http.get(Properties.urlServidor + Properties.endpointUsers);
@@ -58,4 +58,4 @@ angular
             }
         };
 
-    });
+    }]);

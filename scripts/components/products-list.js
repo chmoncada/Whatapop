@@ -1,15 +1,5 @@
-angular
-    .module("whatapop")
-    .component("productList", {
-        templateUrl:"views/products-list.html",
-        bindings: {
-          cercanos: '<'
-        },
-        controller: ProductListComponent
-    });
-
-// inyectamos los componentes
-function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
+// Definimos el Controlador del componente
+var ProductListComponent = function(ProductService, $haversine, $filter, $rootScope) {
 
     //var selectedId = null;
     var $ctrl = this;
@@ -35,8 +25,8 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
                 ProductService.getProducts().then(function (respuesta) {
                     $ctrl.productos = respuesta.data;
                     //selectedId = next.params.id;
-                });               
-            });       
+                });
+            });
         });
 
     };
@@ -88,6 +78,19 @@ function ProductListComponent(ProductService, $haversine, $filter, $rootScope) {
             alert("El navegador no soporta geolocalización");
         }
     };
+};
 
+// Inyectamos las dependencias
+ProductListComponent.$inject = ["ProductService", "$haversine", "$filter", "$rootScope"];
 
-}
+//Defininmos el componente
+angular
+    .module("whatapop")
+    .component("productList", {
+        templateUrl:"views/products-list.html",
+        bindings: {
+          cercanos: '<'
+        },
+        controller: ProductListComponent
+    });
+

@@ -1,18 +1,10 @@
-angular
-    .module("whatapop")
-    .component("productDetails", {
-        templateUrl:"views/product-details.html",
-        bindings: { $router: '<' },
-        controller: ProductDetailComponent
-    });
-
-function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStorage, $sessionStorage) {
+var ProductDetailComponent = function (ProductService,$sce, $filter,$scope, $localStorage, $sessionStorage) {
 
     var $ctrl = this;
-    
+
     // Cargar la vista inicial
     this.$routerOnActivate = function(next) {
-        
+
         //Recuperamos el index del producto de la otra vista
         var id = next.params.id;
 
@@ -47,7 +39,7 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
     if ($localStorage.favorites === undefined) {
         $localStorage.favorites = [];
     };
-    
+
     // trabajamos mejor con una variable en el $scope asi la podemos leer en otras vistas
     $scope.localStorage = $localStorage;
 
@@ -57,11 +49,11 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
     // Funcion para anadir al localstorage, se uso la dependencia ngStorage
     $ctrl.addToFavorites = function(index) {
         if($localStorage.favorites.indexOf(index) !== -1){
-            //console.log("BORRADO DEL ARRAY");
+            console.log("BORRADO DEL ARRAY");
             var start = $localStorage.favorites.indexOf(index);
             $localStorage.favorites.splice(start,1);
         } else {
-            //console.log("AÑADIDO AL ARRAY");
+            console.log("AÑADIDO AL ARRAY");
             $localStorage.favorites.push(index);
         }
     };
@@ -74,4 +66,14 @@ function ProductDetailComponent(ProductService,$sce, $filter,$scope, $localStora
         }
     };
 
-}
+};
+
+ProductDetailComponent.$inject = ["ProductService","$sce", "$filter","$scope", "$localStorage", "$sessionStorage"];
+
+angular
+    .module("whatapop")
+    .component("productDetails", {
+        templateUrl:"views/product-details.html",
+        bindings: { $router: '<' },
+        controller: ProductDetailComponent
+    });
